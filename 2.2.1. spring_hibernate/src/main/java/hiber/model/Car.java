@@ -24,6 +24,10 @@ public class Car {
         this.series = series;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getModel() {
         return model;
     }
