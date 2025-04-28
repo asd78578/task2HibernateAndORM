@@ -5,12 +5,15 @@ import javax.persistence.*;
 @Entity
 @Table()
 public class Car {
+
     @Id
     @Column
     private String model;
 
     @Column
     private int series;
+
+
     @OneToOne(optional = false, mappedBy = "car")
     private User user;
 
@@ -54,4 +57,6 @@ public class Car {
                 ", series=" + series +
                 '}';
     }
+
+
 }
