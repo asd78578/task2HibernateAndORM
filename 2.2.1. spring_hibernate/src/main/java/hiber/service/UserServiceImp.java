@@ -26,19 +26,10 @@ public class UserServiceImp implements UserService {
         return userDao.listUsers();
     }
 
-
     @Transactional(readOnly = true)
     @Override
     public User getUserByCar(String model, int series) {
-        User user = userDao.getUserByCar(model, series);
-        if (user == null) {
-            System.out.printf("Не найден пользователь с именем - model %s, series %s", model, series);
-            try {
-                throw new Exception();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return user;
+        return userDao.getUserByCar(model, series);
     }
+
 }

@@ -3,17 +3,16 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table()
 public class Car {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column
     private String model;
 
     @Column
     private int series;
-
-
     @OneToOne(optional = false, mappedBy = "car")
     private User user;
 
@@ -57,6 +56,4 @@ public class Car {
                 ", series=" + series +
                 '}';
     }
-
-
 }
